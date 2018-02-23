@@ -1,6 +1,6 @@
 /*
- * @Author  gaoling
- * @Update  gaoling  2017/12/4
+ * @Author  Alisa
+ * @Update   Alisa 2017/12/4
  * @Description 数组操作的方法
  */
 Array.prototype.clear = function () {
