@@ -1,6 +1,6 @@
 /*
- * @Author   Alisa
- * @Update  Alisa  2017/12/4
+ * @Author  alisa
+ * @Update  alisa  2017/12/4
  * @Description 表单校验操作
  */
 var validate = {

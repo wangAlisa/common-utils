@@ -1,6 +1,6 @@
 /*
- * @Author   Alisa
- * @Update   Alisa  2017/12/4
+ * @Author  alisa
+ * @Update  alisa  2017/12/4
  * @Description 关于字符的操作
  */
 //关于字符串的操作
@@ -29,5 +29,22 @@ var string = {
            name = name + '';
         }
         return name.split('').reverse().join('');
-    }
+    },
+    /**
+     *去掉字符串空格
+     */
+	trim : function (str,type){
+		switch(type){
+			case 1:
+			return str.replace(/\s+/g,'');
+			case 2:
+			return str.replace(/^\s*/,'');
+			case 3:
+			return str.replace(/\s*$/,'');
+			case 4:
+			return str.replace(/^\s*|\s*$/,'');
+			default:
+			return str;
+		}
+	}
 };
