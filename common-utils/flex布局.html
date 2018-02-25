@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	/*flex 布局*/
+		/*.main {
+			display: -webkit-box;
+			width: 100%;
+			height: 200px;
+		}
+		.main .left {
+			-webkit-box-flex:1;
+			background: red;
+			height: 200px;
+		}
+		.main .mid {
+			-webkit-box-flex:1;
+			background: lightblue;
+			height: 200px;
+		}
+		.main .right {
+			-webkit-box-flex: 1;
+			background: yellow;
+			height:200px;
+		}*/
+		/*box-sizing布局*/
+		.main {
+			width: 400px;
+			height: 200px;
+		}
+		.main .left {
+			float: left;
+			width: 200px;
+			height: 200px;
+			background: red;
+			border:2px solid #000;
+			box-sizing: border-box;
+		}
+		.main .right {
+			float:right;
+			border:2px solid #000;
+			width: 200px;
+			height: 200px;
+			background: blue;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="left"></div>
+		<!-- <div class="mid"></div> -->
+		<div class="right"></div>
+	</div>
+</body>
+</html>

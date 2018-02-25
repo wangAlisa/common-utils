@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		// var name = "world";
+		// (function () {
+		// 	if (typeof name === "undefined") {
+		// 		name = "jack";
+		// 		console.log("goodbye" + name);
+		// 	} else {
+		// 		console.log("hello" + name);
+		// 	}
+		// })() 
+		function Foo () {
+			this.id = "foo instance";
+		}
+		Foo.id = "foo";
+		Foo.prototype.sayName = function () {
+			console.log(this.id);
+		};
+		Foo.sayName = function () {
+			console.log(this.id)
+		};
+		Foo.sayName();
+		new Foo().sayName();
+		var	func = Foo.sayName;
+			func();
+	</script>
+</body>
+</html>

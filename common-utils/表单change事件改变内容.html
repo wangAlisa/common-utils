@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<select id="pili">
+         <option value="叶小钗">叶小钗</option>
+         <option value="一页书" selected>一页书</option>
+         <option value="素还真">素还真</option>
+     </select>
+     <div id="end"></div>
+     <script type="text/javascript" src="js/jquery.js"></script>
+     <script type="text/javascript">
+     	$(document).ready(function () {
+            // 获取到渲染元素
+            var end = $('#end');
+            // 利用表单的change事件，当select的value值发生改变了，就会触发change事件，此时获取当前的value值，并与当前内容做判断，最后添加到渲染元素中
+            $('#pili').change(function () {
+                var name = '';
+                var p = $(this).val();
+                if (p == '叶小钗') {
+                    name = '刀狂剑痴';
+                }
+                if (p == '一页书') {
+                    name = '百世经纶';
+                }
+                if (p == '素还真') {
+                    name = '清香白莲';
+                }
+
+                end.html(name + p);
+            });
+        });
+     </script>
+</body>
+</html>

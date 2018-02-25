@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+var str = "aaaaabbbbcccccccddddfgh";
+var obj = {};
+var max = 1
+for(var i = 0; i < str.length; i++){
+	var v = str.charAt(i)
+	if(obj[v] && obj[v].value){
+		obj[v].count = ++ obj[v].count;
+	}else{
+		obj[v] = {};
+		obj[v].count = 1;
+		obj[v].value = v
+	}
+}
+for(key in obj){
+	if(obj[key].count > max){
+		max = obj[key].count
+	}
+}
+console.log(max)
+for(key in obj){
+	if(obj[key].count == max){
+		console.log(obj[key].value)
+	}
+}
+</script>
+</html>

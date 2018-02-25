@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style type="text/css">
+	div {
+		width: 100px;
+		height: 40px;
+		background: red;
+		margin-bottom: 5px;
+	}
+</style>
+<body>
+	<div id="first">a</div>
+	<div id="last">b</div>
+	<script type="text/javascript">
+		first.onclick = function () {
+			// console.log(window.getComputedStyle(last).display)
+			// console.log(last.style.display);
+			var style = window.getComputedStyle(last).display;
+			last.style.display = style == "block" ? "none" : "block";
+		}
+		document.onclick = function (e) {
+			console.log(e.target)
+			console.log(new Date())
+		}
+	</script>
+</body>
+</html>

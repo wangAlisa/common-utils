@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var str = "abdeasdeasdf";
+		function repeat (str) {
+			// 将字符串截取成数组
+			var arr = str.split("");
+			var obj = {};
+			var result = [];
+			var result2 = [];
+			// console.log(arr)
+			// 利用对象来存储所给字符串中的每一项个数，数组的value值为兑奖的属性，相同元素的个数作为给元素的属性值
+			for (var i = 0; i < arr.length; i++) {
+				// 如果循环到的属性是第一次被循环到，则在对象上直接添加该属性并赋属性值为1
+				if (!obj[arr[i]]) {
+					obj[arr[i]] = 1;
+				} else {
+					// 如果该元素不是第一次被循环到，则将属性值加1，并把属性添加到数组中，得到所以个数超过1个的元素
+					obj[arr[i]] ++;
+					result.push(arr[i])
+				}
+			}
+			// console.log(result);
+			// 对对象进行循环，并将属性值添加到另一个数组中，得到所有元素的个数
+			for (var j in obj) {
+				result2.push(obj[j])
+			}
+			console.log(result2)
+			// 默认第一个元素的个数最大，与后一个数比较,最后得到最大数组中最大的值
+			var max = result2[0]
+			for (var i = 1; i < result2.length; i++) {
+				if (result2[i] > max) {
+					max = result2[i]
+				}
+			}
+			// console.log(max)
+			// 再一次对存储对象进行循环，如果循环得到的属性值等于最大之，就输出该属性和属性值
+			for (var i in obj) {
+				if (obj[i] == max) {
+					console.log(i,max)
+				}
+			}
+		}
+		调用该函数
+		repeat(str)
+	</script>
+</body>
+</html>

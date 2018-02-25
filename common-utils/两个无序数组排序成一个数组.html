@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+// 两个不同的数组，根据大小排序
+	var a = [3,5,6,9,15];
+	var b = [1,2,8,11];
+	var c = [];
+	var alen = a.length;
+	var blen = b.length;
+	var i,j,k;
+	// a,b当两个数组都有数据时判断相同位置上的俩值的大小，将小的赋值给c数组，并将数值小的数组的小标加1，与另一个数组的当前值进行比较。
+	for(i = 0, j = 0, k = 0;i < alen && j < blen;k++){
+	    if(a[i] < b[j]){
+	        c[k] = a[i++];
+	    }else{
+	       c[k] = b[j++];
+	    }
+	}
+	// 将数组最后剩余的值赋值给数组c
+	for(var m = i;m < alen;m++){
+	    c[k++] = a[m];
+	}
+	for(var n = j;n < blen;n++){
+	    c[k++] = b[n];
+	}
+	// 最后得到排序完成的数组
+	console.log(c);
+</script>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr1 = [1, 2, 3, 4, 5];
+		var arr2 = [4, 5, 6, 7, 8, 9];
+		var arr3 = [1, 3, 5, 6, 8, 7, 9];
+		var arr4 = [];
+		// 将三个数组链接到一块
+		var arr4 = arr4.concat(arr1, arr2, arr2);
+		console.log(arr4);
+		var obj={}
+		var arr5 = []
+		for(var i=0; i<arr4.length;i++){
+			// 通过对象的存储功能来去重
+			if(!obj[arr4[i]]){
+				obj[arr4[i]]=1;
+				arr5.push(arr4[i])
+			}
+		}
+		console.log(arr5)
+
+
+
+		var arr = [1,3,3,3,5,6,8,8,6,6]
+		var arr1 = [];
+		// 利用监测新数组的中是否包含着原来数组的小标来去重
+		for (var i = 0; i < arr.length; i++) {
+			if (arr1.indexOf(arr[i]) < 0) {
+				arr1.push(arr[i])
+			}
+		}
+	</script>
+</body>
+</html>

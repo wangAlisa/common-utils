@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script type="text/javascript">
+	for (var i = 0; i < 5; i++) {
+		setTimeout(function () {
+			console.log(i); //5,5,5,5,5在1秒之后循环已经完成，此时的i是5，每循环一次就会创建一个延时器，由于延时器是异步，所以会在循环完成之后才执行
+		},1000)
+	}
+	// for (let i = 0; i < 5; i++) {
+	// 	setTimeout(function () {
+	// 		console.log(i); //1,2,3,4
+	// 	},0)
+	// }
+	// for (var i = 0; i < 5; i++) {
+	// 	(function (i) {
+	// 		setTimeout(function () {
+	// 			console.log(i) // 1,2,3,4
+	// 		},0)
+	// 	})(i)
+	// }
+	// for (var i = 0; i < 5; i++) {
+	// 	setInterval(function () {
+	// 		console.log(i) //5,5,5,5,5
+	// 	},1000)
+	// }
+	// console.log(1);
+	// setTimeout(function () {
+	// 	console.log(2);
+	// 	setTimeout(function () {
+	// 		console.log(3)
+	// 	}, 5000)
+	// },3000)
+	// console.log(4);
+</script>
+</body>
+</html>

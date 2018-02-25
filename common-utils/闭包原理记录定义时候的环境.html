@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<ul id="list">
+	<li data='0'>内容1</li>
+	<li data='1'>内容2</li>
+	<li data='2'>内容3</li>
+</ul>
+	<script type="text/javascript">
+	// 利用事件委托得不到当前点击元素的下表,所以需要给元素添加自定义属性，同时通过getAttribute来获取该属性值
+		// list.onclick = function (e) {
+		// 	console.log(e.target.innerHTML,e.target.getAttribute('data'),'kkk')
+		// }
+		// console.log(list.children)
+		var li = list.children;
+		// 由于事件是异步的，所以并不能时时输出i,所以需要给每一项添加一个idx属性来保存对应的下标。
+		// for (let i = 0; i < li.length; i++) {
+		// 	li[i].idx=i
+		// 	li[i].onclick = function () {
+		// 		console.log(this.innerHTML,li[i].idx)
+		// 	}
+		// }
+	// 利用闭包每循环一次执行一次下边的立即执行函数，然后形成一个闭包，当点击事件发生的时候会，由于闭包会记录定义时候的环境，所以每次都可以输出对应的小标
+		for (var i = 0; i < li.length; i++) {
+			(function (i) {
+				li[i].onclick = function () {
+					console.log(this.innerHTML,i)
+				}
+			})(i)
+		}
+
+		for (var i = 0; i < 5; i++) {
+			(function (i) {
+				console.log(i)
+			})(i)
+		}
+	</script>
+</body>
+</html>
